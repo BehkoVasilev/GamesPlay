@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Catalog } from './components/Catalog/Catalog';
 
@@ -9,8 +10,18 @@ import { Header } from "./components/Header";
 import { Home } from "./components/Home/Home";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
+import { getAll } from './services/gameService';
 
 function App() {
+    const [games, setGames] = useState([]);
+
+    useEffect(() => {
+        getAll()
+            .then(result => {
+                setGames(result)
+            });
+    }, []);
+
     return (
         <div id="box">
             <Header />
