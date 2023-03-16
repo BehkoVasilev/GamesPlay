@@ -9,3 +9,10 @@ export const getAll = async () => {
 
     return games;
 };
+
+export const createOne = async (gameData) => {
+    const result = await request.post(baseUrl, gameData);
+
+    
+    return result
+}

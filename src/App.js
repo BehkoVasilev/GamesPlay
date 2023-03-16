@@ -23,6 +23,12 @@ function App() {
             });
     }, []);
 
+    const onCreateSubmitHandler = async (data) => {
+        const game = await gameService.createOne(data);
+
+        setGames(state => [...state, game]);
+    };
+
     return (
         <div id="box">
             <Header />
@@ -32,7 +38,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
-                    <Route path='/create' element={<Create />} />
+                    <Route path='/create' element={<Create onCreateSubmitHandler={onCreateSubmitHandler}/>} />
                     <Route path='/edit/:gameId' element={<Edit />} />
                     <Route path='/details/:gameId' element={<Details />} />
                     <Route path='/catalog' element={<Catalog games={games} />} />
