@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { Catalog } from './components/Catalog/Catalog';
 
-import { Catalogue } from "./components/Catalogue/Catalogue";
 import { Create } from "./components/Create/Create";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
@@ -23,7 +23,7 @@ function App() {
                     <Route path='/create' element={<Create />} />
                     <Route path='/edit/:gameId' element={<Edit />} />
                     <Route path='/details/:gameId' element={<Details />} />
-                    <Route path='/catalogue' element={<Catalogue />} />
+                    <Route path='/catalog' element={<Catalog />} />
                 </Routes>
             </main>
 
