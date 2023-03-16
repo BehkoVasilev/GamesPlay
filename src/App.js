@@ -1,3 +1,5 @@
+import { Routes, Route } from 'react-router-dom';
+
 import { Catalogue } from "./components/Catalogue/Catalogue";
 import { Create } from "./components/Create/Create";
 import { Details } from "./components/Details/Details";
@@ -14,13 +16,15 @@ function App() {
             <Header />
 
             <main id="main-content">
-                <Home />
-                <Login />
-                <Register />
-                <Create />
-                <Edit />
-                <Details />
-                <Catalogue />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/create' element={<Create />} />
+                    <Route path='/edit/:gameId' element={<Edit />} />
+                    <Route path='/details/:gameId' element={<Details />} />
+                    <Route path='/catalogue' element={<Catalogue />} />
+                </Routes>
             </main>
 
             <Footer />
