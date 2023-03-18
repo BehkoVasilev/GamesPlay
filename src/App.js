@@ -35,13 +35,14 @@ function App() {
 
             <main id="main-content">
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Home games={games}/>} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/create' element={<Create onCreateSubmitHandler={onCreateSubmitHandler}/>} />
                     <Route path='/edit/:gameId' element={<Edit />} />
+                    <Route path='/catalog/' element={<Catalog games={games} />} />
+                    <Route path='/catalog/:gameId' element={<Details />} />
                     <Route path='/details/:gameId' element={<Details />} />
-                    <Route path='/catalog' element={<Catalog games={games} />} />
                 </Routes>
             </main>
 

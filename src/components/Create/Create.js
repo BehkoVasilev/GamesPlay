@@ -44,8 +44,8 @@ export const Create = ({
                     <input value={values.imageUrl} onChange={onChangeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
 
                     <label htmlFor="summary">Summary:</label>
-                    <textarea value={values.sum} name="summary" id="summary"></textarea>
-                    <input className="btn submit" onChange={onChangeHandler} type="submit" value="Create Game" />
+                    <textarea value={values.summary} onChange={onChangeHandler} name="summary" id="summary"></textarea>
+                    <input className="btn submit" type="submit" value="Create Game" />
                 </div>
             </form>
         </section>

@@ -10,6 +10,12 @@ export const getAll = async () => {
     return games;
 };
 
+export const getOne = async (gameId) => {
+    const result = await request.get(`${baseUrl}/${gameId}`);
+
+    return result
+}
+
 export const createOne = async (gameData) => {
     const result = await request.post(baseUrl, gameData);
 
